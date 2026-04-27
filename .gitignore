@@ -1,18 +1,12 @@
-# Dependencies
-vendor/
-
-# Local/Sensitive Config
-local-config.php
-hostinger-config.php
-config/db.php
-.env
-
-# Large Assets/Backups
+# Large Backups (Keep ignored)
 assets.zip
 final-cats.zip
 *.zip
-*.sql
-DataBase/
+
+# Sensitive Config
+local-config.php
+hostinger-config.php
+config/db.php
 
 # Logs and Temp
 logs/
@@ -28,4 +22,5 @@ debug-c4ad10.log
 Thumbs.db
 .cursor/
 .idea/
-.vscode/
+config.bat
+node_modules

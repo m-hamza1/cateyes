@@ -1,0 +1,7 @@
+<?php
+require_once 'config/config.php';
+require_once 'includes/Database.php';
+$db = new Database();
+$res = $db->fetchAll("SHOW TABLES LIKE 'newsletter_subscribers'");
+print_r($res);
+?>

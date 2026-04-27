@@ -1,0 +1,179 @@
+=== FORM SUBMISSION DEBUG ===
+Timestamp: 2026-01-28 13:08:25
+Product ID: 1
+Product SKU from DB: SKU123
+POST data: Array
+(
+    [product_type] => physical
+    [brand_id] => 1
+    [name_en] => Armonia Shampoo - 250ml
+    [name_ar] => شامبو أرمونيا 250 مل
+    [sku] => SKU123
+    [slug] => apple-iphone-14
+    [short_description_en] => Purify and protect your scalp!
+    [short_description_ar] => نظفي فروة رأسك واحميها!
+    [description_en] => Armonia is the dermo-balancing shampoo specially designed to treat all skin types. Thanks to a specific purifying action, it cleanses and eliminates scalp impurities, giving a pleasant sensation of hygiene and freshness.
+    [description_ar] => أرمونيا هو شامبو متوازن للبشرة مصمم خصيصًا لعلاج جميع أنواع البشرة. بفضل فعاليته المنقية، ينظف فروة الرأس ويزيل الشوائب، مما يمنح شعورًا لطيفًا بالنظافة والانتعاش.
+    [price] => 99
+    [compare_price] => 100
+    [cost_price] => 70
+    [track_inventory] => on
+    [stock_quantity] => 0
+    [low_stock_threshold] => 5
+    [categories] => Array
+        (
+            [0] => 9
+        )
+
+    [is_active] => on
+    [is_featured] => on
+    [is_bestseller] => on
+    [is_new] => on
+    [requires_shipping] => on
+)
+
+FILES data: Array
+(
+    [main_image] => Array
+        (
+            [name] => Armonia-Shampoo.webp
+            [full_path] => Armonia-Shampoo.webp
+            [type] => image/webp
+            [tmp_name] => C:\xampp\tmp\php4FD9.tmp
+            [error] => 0
+            [size] => 22898
+        )
+
+    [additional_images] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== FORM SUBMISSION DEBUG ===
+Timestamp: 2026-01-28 13:08:25
+Product ID: 1
+Product SKU from DB: SKU123
+POST data: Array
+(
+    [product_type] => physical
+    [brand_id] => 1
+    [name_en] => Armonia Shampoo - 250ml
+    [name_ar] => شامبو أرمونيا 250 مل
+    [sku] => SKU123
+    [slug] => apple-iphone-14
+    [short_description_en] => Purify and protect your scalp!
+    [short_description_ar] => نظفي فروة رأسك واحميها!
+    [description_en] => Armonia is the dermo-balancing shampoo specially designed to treat all skin types. Thanks to a specific purifying action, it cleanses and eliminates scalp impurities, giving a pleasant sensation of hygiene and freshness.
+    [description_ar] => أرمونيا هو شامبو متوازن للبشرة مصمم خصيصًا لعلاج جميع أنواع البشرة. بفضل فعاليته المنقية، ينظف فروة الرأس ويزيل الشوائب، مما يمنح شعورًا لطيفًا بالنظافة والانتعاش.
+    [price] => 99
+    [compare_price] => 100
+    [cost_price] => 70
+    [track_inventory] => on
+    [stock_quantity] => 0
+    [low_stock_threshold] => 5
+    [categories] => Array
+        (
+            [0] => 9
+        )
+
+    [is_active] => on
+    [is_featured] => on
+    [is_bestseller] => on
+    [is_new] => on
+    [requires_shipping] => on
+)
+
+FILES data: Array
+(
+    [main_image] => Array
+        (
+            [name] => Armonia-Shampoo.webp
+            [full_path] => Armonia-Shampoo.webp
+            [type] => image/webp
+            [tmp_name] => C:\xampp\tmp\php4FD9.tmp
+            [error] => 0
+            [size] => 22898
+        )
+
+    [additional_images] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+Starting validation processing...
+Processed SKU: SKU123 (Original: SKU123)
+Processed price: 99 (Original: 99)
+Checking for validation errors...
+Validation errors count: 0
+Current main_image: product_697a09ee71a73.webp
+Products directory: C:\xampp\htdocs\project/assets/uploads/products/
+Directory exists: YES
+Directory writable: YES
+New image uploaded: Armonia-Shampoo.webp (ext: webp)
+Old image not found or no old image to delete
+New image filename: product_697a0a49af0c2.webp
+Image uploaded successfully to: C:\xampp\htdocs\project/assets/uploads/products/product_697a0a49af0c2.webp
+File exists after upload: YES
+ERROR: Database update failed

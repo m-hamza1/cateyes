@@ -1,0 +1,15 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+order_id	int(11)	NO	MUL	NULL	
+product_id	int(11)	NO	MUL	NULL	
+variant_id	int(11)	YES	MUL	NULL	
+product_name	varchar(255)	NO		NULL	
+product_price	decimal(10,2)	YES		0.00	
+product_sku	varchar(100)	NO		NULL	
+variant_details	text	YES		NULL	
+quantity	int(11)	NO		NULL	
+unit_price	decimal(10,2)	NO		NULL	
+tax_rate	decimal(5,2)	YES		0.00	
+tax_amount	decimal(10,2)	YES		0.00	
+total_price	decimal(10,2)	NO		NULL	
+warehouse_id	int(11)	YES	MUL	NULL	

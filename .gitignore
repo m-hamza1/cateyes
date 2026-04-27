@@ -1,0 +1,31 @@
+# Dependencies
+vendor/
+
+# Local/Sensitive Config
+local-config.php
+hostinger-config.php
+config/db.php
+.env
+
+# Large Assets/Backups
+assets.zip
+final-cats.zip
+*.zip
+*.sql
+DataBase/
+
+# Logs and Temp
+logs/
+*.log
+tmp/
+scratch/
+last_errors.txt
+recent_apache_errors.txt
+debug-c4ad10.log
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.cursor/
+.idea/
+.vscode/

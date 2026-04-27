@@ -1,0 +1,30 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+sku	varchar(100)	NO	UNI	NULL	
+brand_id	int(11)	YES	MUL	NULL	
+product_type	enum('physical','digital','both')	YES	MUL	physical	
+slug	varchar(255)	NO	UNI	NULL	
+price	decimal(10,2)	NO		NULL	
+compare_price	decimal(10,2)	YES		NULL	
+cost_price	decimal(10,2)	YES		NULL	
+weight	decimal(10,2)	YES		NULL	
+weight_unit	varchar(10)	YES		kg	
+stock_quantity	int(11)	YES	MUL	0	
+low_stock_threshold	int(11)	YES		5	
+stock_status	enum('in_stock','out_of_stock','on_backorder')	YES		in_stock	
+track_inventory	tinyint(1)	YES		1	
+main_image	varchar(255)	YES		NULL	
+is_featured	tinyint(1)	YES	MUL	0	
+is_active	tinyint(1)	YES	MUL	1	
+meta_title	varchar(255)	YES		NULL	
+meta_description	text	YES		NULL	
+meta_keywords	text	YES		NULL	
+views_count	int(11)	YES		0	
+created_at	timestamp	NO		current_timestamp()	
+updated_at	timestamp	NO		current_timestamp()	on update current_timestamp()
+views	int(11)	YES	MUL	0	
+sales_count	int(11)	YES	MUL	0	
+average_rating	decimal(3,2)	YES		0.00	
+review_count	int(11)	YES		0	
+is_new	tinyint(1)	YES	MUL	0	
+is_bestseller	tinyint(1)	YES	MUL	0	

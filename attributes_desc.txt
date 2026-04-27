@@ -1,0 +1,6 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+name	varchar(100)	NO		NULL	
+type	enum('color','size','text','dropdown')	YES		text	
+is_active	tinyint(1)	YES		1	
+created_at	timestamp	NO		current_timestamp()	

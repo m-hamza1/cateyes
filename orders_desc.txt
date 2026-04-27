@@ -1,0 +1,53 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+order_number	varchar(50)	NO	UNI	NULL	
+user_id	int(11)	YES	MUL	NULL	
+warehouse_id	int(11)	YES	MUL	NULL	
+customer_id	int(11)	YES	MUL	NULL	
+guest_email	varchar(255)	YES		NULL	
+currency_code	varchar(10)	NO		NULL	
+exchange_rate	decimal(10,4)	NO		1.0000	
+currency	varchar(3)	NO		USD	
+order_status	enum('pending','confirmed','processing','shipped','delivered','cancelled')	YES	MUL	pending	
+payment_status	enum('pending','paid','failed','refunded')	YES	MUL	pending	
+payment_date	date	YES		NULL	
+payment_method	varchar(50)	YES		NULL	
+payment_transaction_id	varchar(255)	YES		NULL	
+subtotal	decimal(10,2)	NO		NULL	
+tax_amount	decimal(10,2)	NO		0.00	
+shipping_cost	decimal(10,2)	NO		0.00	
+shipping_method_id	int(11)	YES	MUL	NULL	
+shipping_date	date	YES		NULL	
+delivery_date	date	YES		NULL	
+shipping_amount	decimal(10,2)	NO		0.00	
+discount_amount	decimal(10,2)	NO		0.00	
+total_amount	decimal(10,2)	NO		NULL	
+billing_first_name	varchar(100)	NO		NULL	
+billing_last_name	varchar(100)	NO		NULL	
+billing_company	varchar(255)	YES		NULL	
+billing_address_line1	varchar(255)	NO		NULL	
+billing_address_line2	varchar(255)	YES		NULL	
+billing_city	varchar(100)	NO		NULL	
+billing_state	varchar(100)	YES		NULL	
+billing_postal_code	varchar(20)	NO		NULL	
+billing_country	varchar(100)	NO		NULL	
+billing_phone	varchar(20)	NO		NULL	
+billing_email	varchar(255)	NO		NULL	
+shipping_first_name	varchar(100)	NO		NULL	
+shipping_last_name	varchar(100)	NO		NULL	
+shipping_company	varchar(255)	YES		NULL	
+shipping_address_line1	varchar(255)	NO		NULL	
+shipping_address_line2	varchar(255)	YES		NULL	
+shipping_city	varchar(100)	NO		NULL	
+shipping_state	varchar(100)	YES		NULL	
+shipping_postal_code	varchar(20)	NO		NULL	
+shipping_country	varchar(100)	NO		NULL	
+shipping_phone	varchar(20)	NO		NULL	
+notes	text	YES		NULL	
+shipping_address	text	YES		NULL	
+billing_address	text	YES		NULL	
+tracking_number	varchar(100)	YES		NULL	
+ip_address	varchar(45)	YES		NULL	
+user_agent	text	YES		NULL	
+created_at	timestamp	NO	MUL	current_timestamp()	
+updated_at	timestamp	NO		current_timestamp()	on update current_timestamp()

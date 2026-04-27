@@ -1,0 +1,112 @@
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /public_html/
+    
+    # Auto-detect subdirectory - works both on Local and Hostinger
+    # If on Hostinger root, these rules will work fine without RewriteBase
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # SEO Friendly URLs
+    RewriteRule ^product/([a-z0-9-]+)$ product.php?slug=$1 [L,QSA]
+    RewriteRule ^category/([a-z0-9-]+)$ shop.php?category=$1 [L,QSA]
+    RewriteRule ^brand/([a-z0-9-]+)$ shop.php?brand=$1 [L,QSA]
+    RewriteRule ^blog/([a-z0-9-]+)$ post.php?slug=$1 [L,QSA]
+    RewriteRule ^page/([a-z0-9-]+)$ page.php?slug=$1 [L,QSA]
+    
+    # Remove .php extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [L]
+    
+    # Block access to sensitive directories
+    RewriteRule ^(config|includes|vendor|sql|logs)/.*$ - [F,L]
+    
+    # Block access to diagnostic/utility scripts on live (Removed update_trigger from here)
+    RewriteRule ^(describe_|check_|list_|get_|find_|test_|debug|diag|clear_|fix_|setup_|rebuild_|verify_|sync_|run_tests).*\.php$ - [F,L]
+</IfModule>
+
+# Security & PHP Settings... (rest remains similar but cleaned up)
+
+
+# Security Headers (Temporarily commented to debug connection reset)
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Header set Content-Security-Policy "default-src 'self' ..."
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Default Documents
+DirectoryIndex index.php index.html
+
+# Protect .htaccess and other hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect configuration files
+<FilesMatch "\.(ini|log|conf|sql|md|txt|json|lock|env|bak|old|orig|dist)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect composer and config files (Temporarily relaxed for setup)
+# <FilesMatch "^(composer\.json|composer\.lock|hostinger-config\.php|hostinger-config\.example\.php|db-connection-test\.php|\.env)$">
+#     Order allow,deny
+#     Deny from all
+# </FilesMatch>
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    
+    # Default
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# PHP Settings (if allowed by server)
+# <IfModule mod_php7.c>
+#     php_value upload_max_filesize 10M
+#     php_value post_max_size 10M
+#     php_value max_execution_time 300
+#     php_value max_input_time 300
+#     php_flag display_errors Off
+#     php_flag log_errors On
+# </IfModule>
+
+# Error Pages
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+ErrorDocument 500 /500.php

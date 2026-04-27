@@ -1,0 +1,26 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+first_name	varchar(100)	NO		NULL	
+last_name	varchar(100)	NO		NULL	
+email	varchar(255)	NO	UNI	NULL	
+password	varchar(255)	NO		NULL	
+phone	varchar(20)	YES		NULL	
+role	enum('admin','customer','vendor')	YES	MUL	customer	
+is_active	tinyint(1)	YES	MUL	1	
+email_verified	tinyint(1)	YES		0	
+verification_token	varchar(255)	YES		NULL	
+reset_token	varchar(255)	YES		NULL	
+reset_token_expire	datetime	YES		NULL	
+last_login	datetime	YES		NULL	
+created_at	timestamp	NO		current_timestamp()	
+updated_at	timestamp	NO		current_timestamp()	on update current_timestamp()
+customer_group_id	int(11)	YES	MUL	1	
+company	varchar(100)	YES		NULL	
+tax_id	varchar(50)	YES		NULL	
+newsletter_subscribed	tinyint(1)	YES		0	
+total_orders	int(11)	YES		0	
+total_spent	decimal(10,2)	YES		0.00	
+last_order_date	datetime	YES		NULL	
+customer_notes	text	YES		NULL	
+failed_attempts	int(11)	YES		0	
+lockout_until	datetime	YES		NULL	

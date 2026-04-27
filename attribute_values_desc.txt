@@ -1,0 +1,6 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+attribute_id	int(11)	NO	MUL	NULL	
+value	varchar(255)	NO		NULL	
+color_code	varchar(20)	YES		NULL	
+sort_order	int(11)	YES		0	
